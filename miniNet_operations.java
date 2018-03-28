@@ -11,14 +11,14 @@ public class miniNet_operations extends Network {
 	
 	public void addUser() 
 	{
-		super.makeProfile();
+		super.makeProfile();							// this method is defined in the super class which Network
 	}
 													//METHOD TO SHOW PEOPLE IN THE NETWORK
 	
 	
 	public void showPeopleInNetwork() {
 			for(int y=0;y<i;y++) {
-				if(!"".equals(net[y][0])) {
+				if(!"".equals(net[y][0])) {		//this condition make sure that the code doesn't print null  values
 					
 					System.out.println(net[y][0]);
 					
@@ -30,13 +30,13 @@ public class miniNet_operations extends Network {
 	
 	public void selectPerson(String NAME) {
 		for(s=0;s<i;s++) 
-		{
-			if(net[s][0].equals(NAME)) 
+		{										
+			if(net[s][0].equals(NAME)) 				
 			{
 				name=NAME;
 				age=net[s][1];
 				status= net[s][2];
-				showProfile(NAME);
+				showProfile(NAME);				// this method is in the network class
 			}
 		}
 	}
@@ -48,7 +48,7 @@ public class miniNet_operations extends Network {
 		for( s=0;s<i;s++)
 		{
 			if(user1.equals(net[s][0])) 
-				age1= Integer.valueOf(net[s][1]);
+				age1= Integer.valueOf(net[s][1]);	// this type casting string value into interger value
 				
 				if(net[s][0].equals(user2)) 
 					 age2 = Integer.valueOf(net[s][1]);	 
@@ -66,7 +66,7 @@ public class miniNet_operations extends Network {
 							{	
 								for(int n=0;n<100;n++) 
 								{	
-									if("".equals(friends[m][n])) 
+									if("".equals(friends[m][n])) 	// this checks for the null value in the array
 									{
 										friends[m][n]=user2;
 										break;
@@ -163,7 +163,7 @@ public class miniNet_operations extends Network {
 				for(c=q;c<=i;c++) 
 					{
 					for(b=0;b<3;b++) 						//deleting record from the net array
-					net[c][b]=net[c+1][b];
+					net[c][b]=net[c+1][b];					//this statement copy's next column element into the current
 															//deleting record from the friends array
 					b=0;
 							
@@ -176,7 +176,7 @@ public class miniNet_operations extends Network {
 				for(c=0;c<i;c++) {							// fr is the number of persons in the friends array
 					if(friends[q][c].equals(user1)) {
 						for(int d=c;d<i;d++)
-						friends[q][d]=friends[q][d+1];}
+						friends[q][d]=friends[q][d+1];}			//this statement copy's next column element into the current
 					else if("".equals(friends[q][c]))
 						break;
 					else
@@ -202,7 +202,7 @@ public class miniNet_operations extends Network {
 								
 								for(int cc=c;cc<=i;cc++)
 								
-								friends[q][cc]=friends[q][cc+1];
+								friends[q][cc]=friends[q][cc+1];			// this statement copy's next column element into the current
 							}
 				}
 			
@@ -218,7 +218,7 @@ public class miniNet_operations extends Network {
 			{
 				for(int y=0;y<i;y++)
 				{
-					if(!"".equals(friends[q][y])) 
+					if(!"".equals(friends[q][y])) 						//this condition make sure that the code doesn't work on null  values
 					{
 				
 				System.out.println(friends[q][y+1]);
